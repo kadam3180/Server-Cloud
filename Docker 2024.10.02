@@ -1,0 +1,63 @@
+										Docker
+
+
+Mi a Docker?
+	- PaaS termékek összessége, amely operációs rendszer szintű virtualizálást használ zoftvercsomagok futtatására.
+	- Nyílt forráskódú.
+	- Célja: Minimalizálja az időt a programkód írása és production környezetben történő futtatása között.
+
+	- A Docker egy container menedzsment szolgáltatás
+
+Konténerek:
+	- Konténereket hozunk létre (Önállő környezetek)
+	- Egymástól elkülönített, izolált környezetek
+	- Tartalmazza: szoftver + szükséges függvénykönyvtárak + dokumentáció + konfigurációs fájlok
+	- Képesek egymással kapcsolatba lépni
+
+Mi kell hozzá?
+	- Telepíteni a Docker Engine-t.
+		- konténerek kezelése
+		- képfájlok kezelése
+		- egyéb szolgáltatások
+
+Miért is népszerű a Docker?
+	- Hatása a szoftverfejlesztés és -terjesztés világára
+	- Hordozhatóság: alkalmazások --> lightweight konténer
+	- Reprodukálhatóság: szoftvertelepítések konzisztensek
+	- Hatékonyság: optimalizált erőforráskihasználás
+	- Skálázhatóság: kezelés megnövekedett terhelés alatt
+
+Főbb Docker komponensek:
+	- Docker Engine: központi elem, konténerek létrehozása és kezelése 
+	- Docker Image: olvasható minta, ami a konténerek létrehozásához szükséges, ez alapján jönnek létre a konténerek
+	- Docker Hub: cloud-based, repozitórium Docker Image-ek tárolására
+	- Dockerfile: utasításokat tartalmaz a Docker Image elkészítéséhez
+	- Docker Registry: Egy elosztó rendszer Docker Image-eknek, ami lehetővé teszi az Image-ek tárolását privát és publikus módon is
+
+Mi az a Dockerfile?
+- Utasításokat tartalmaz arra vonatkozóan,hogy hogyan kell létrehozni a Docker Image-et
+
+Mi az a Docker Image?
+- Több rétegből álló fájl,amelyet arra használunk, hogy egy Docker konténerben kódot hajtsunk végre.
+- Tartalmazza a konténerek létrehozásához szükséges utasításokat.
+- Röviden: futtatható csomag, ami mindent tartalmaz, ami kell az alkalmazás indításához.
+
+A Docker architektúra:
+- Kliens-szerver architektúrát alkalmaz.
+- A docker kliens a Docker daemon-al kommunikál, amely létrehozza,futtatja és elosztja a docker konténereket.
+- A kliens futhat ugyanazon a rendszeren,mint a Docker daemon, de lehetőség van távolról is kapcsolódni.
+
+Hogy jön ehhez a Docker Engine?
+- A Docker Engine az a kliens-szerver alapú alkalmazás, ami futtatja a konténereket.
+- Három fő komponensből áll:
+	- Szerver: Ez felel a Docker Image-ek,konténerek, hálózatok és meghajtók létrehozásáért, kezeléséért.Úgy is nevezik,hogy Docker daemon.
+	- REST API: Megadja, hogy az alkalmazások miként tudnak interakcióba lépni és utasításokat küldeni a szervernek.
+	- Kliens: A Docker parancssor (CLI), amely lehetővé teszi, hogy kezeljük a Dockert parancsok segítségével.
+
+Mi az a Docker konténer?
+- Egy futási időben létező példánya egy Docker Image-nek.
+- Mindent tartalmaz, ami az alkalmazás futtatásához szükséges. -> Lehetővé teszi,hogy az alkalmazások izolált környezetben fussanak.
+
+Mi az a Docker Hub?
+- Egy felhő alapú repository szolgáltatás, ahova a felhasználók feltölthetik a Docker Image-eket.
+- Magát a repositorykat tároló szolgáltatást (hubot) nevezzük registrynek is.
